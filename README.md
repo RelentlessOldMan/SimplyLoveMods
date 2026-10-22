@@ -9,10 +9,16 @@ Built for **Simply Love 5.3.0 on StepMania 5.1**. The files are drop-in replacem
 ### Title menu: Just Play
 A new **Just Play** item, selected by default, which skips the usual Gameplay → color → 1 Player → ITG → Regular screens. One press of Start takes you straight to song select: one player, ITG mode, your last theme color.
 
+<img src="docs/just-play.png" width="320" alt="Title menu with Just Play selected">
+
 ### Your speed mod sticks
 Simply Love normally saves your options only after you finish a song, so a mod set and then quit (or set and then the game closed) was lost. Now your profile is saved when you leave the options screen and again when each song starts. Set M320 once and it's there next time, even after a restart. This needs a local profile (Options → Manage Local Profiles).
 
+![Options screen showing M320 kept](docs/options.png)
+
 ### Gameplay
+
+![Gameplay header: score, PROJ, MAX in gold, and the song bar](docs/gameplay.png)
 - **PROJ**: the score you'll finish with if you keep playing like you have so far (points so far ÷ points possible so far).
 - **MAX**: the best score still reachable if everything left is perfect. It can only go down.
 - Both are drawn as big as the score next to it, and change color with star pace, using the theme's full-combo colors:
@@ -29,8 +35,12 @@ Simply Love normally saves your options only after you finish a song, so a mod s
 ### Pause menu
 Spacebar (or Select) pauses the song and opens a small menu: **Resume**, **Restart Song** and **Exit to Song Select**. You can drive it from the keyboard or the pad. Back or Spacebar resumes.
 
+<img src="docs/pause.png" width="400" alt="Pause menu">
+
 ### Song select header
 - **Session steps** (`hit/total` for everything you've played since starting the game, where hits count any timing window and misses count against you; mines don't count) next to the theme's session timer, both evenly spaced across the header.
+
+![Header with session timer and session steps](docs/header.png)
 
 ### Heart-rate feed (optional, off by default)
 For [HeartRateMonitor](https://github.com/RelentlessOldMan/HeartRateMonitor): writes song begin/end, pause and resume events as small JSON files to `Save/HeartRate/events/`, so the app can split your heart-rate recording by song. It's **off by default**. Turn it on under **Options → Simply Love Options → Heart Rate Feed**. Leave it off if you don't use the app, or the files will pile up with nothing deleting them.
