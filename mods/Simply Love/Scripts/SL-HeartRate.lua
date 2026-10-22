@@ -7,9 +7,9 @@
 -- The app polls that folder, ingests each file, and deletes it.
 -- RageFile can't append, which is why it's one file per event.
 --
--- Nothing is written unless /Save/HeartRate/ already exists, so players
--- without the app don't collect a pile of files nobody reads.  Create that
--- folder (or let the app do it) to turn the feed on.
+-- Nothing is written unless the Heart Rate Feed option is On (Options ->
+-- Simply Love Options), so players without the app don't collect a pile of
+-- files nobody reads.
 --
 -- Event schema (v1):
 --    {v, source, seq, kind="begin"|"end"|"mark", type, id, parent,
@@ -39,7 +39,7 @@ HeartRate.NextId = function()
 end
 
 HeartRate.Emit = function(event)
-	if not FILEMAN:DoesFileExist("/Save/HeartRate/") then return end
+	if not ThemePrefs.Get("HeartRateFeed") then return end
 
 	HeartRate.seq = HeartRate.seq + 1
 	event.v = 1

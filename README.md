@@ -33,7 +33,7 @@ Spacebar (or Select) pauses the song and opens a small menu: **Resume**, **Resta
 - **Session steps** (`hit/total` for everything you've played since starting the game, where hits count any timing window and misses count against you; mines don't count) next to the theme's session timer, both evenly spaced across the header.
 
 ### Heart-rate feed (optional, off by default)
-For [HeartRateMonitor](https://github.com/RelentlessOldMan/HeartRateMonitor): writes song begin/end, pause and resume events as small JSON files to `Save/HeartRate/events/`, so the app can split your heart-rate recording by song. It's **off unless the folder `Save/HeartRate/` exists**. Create that folder (in `%APPDATA%\StepMania 5.1\` on Windows) to turn it on.
+For [HeartRateMonitor](https://github.com/RelentlessOldMan/HeartRateMonitor): writes song begin/end, pause and resume events as small JSON files to `Save/HeartRate/events/`, so the app can split your heart-rate recording by song. It's **off by default**. Turn it on under **Options → Simply Love Options → Heart Rate Feed**. Leave it off if you don't use the app, or the files will pile up with nothing deleting them.
 
 If a simfile has a `//HRM-SEGMENTS {json}` comment line before its first `#NOTES`, those segments are sent instead of the theme's stream/break detection. See `Scripts/SL-HeartRate.lua` and `BGAnimations/ScreenGameplay overlay/HeartRate.lua` for the format.
 
@@ -44,7 +44,7 @@ If a simfile has a `//HRM-SEGMENTS {json}` comment line before its first `#NOTES
 3. Copy everything inside this repo's `mods/Simply Love/` over it, replacing files.
 4. Restart StepMania.
 
-A few files (`metrics.ini`, `Languages/en.ini`, `Scripts/SL_Init.lua`, and some gameplay/options Lua) are whole-file replacements of the 5.3.0 originals. Copying them over a different theme version, or over your own edits, will undo those. To uninstall, restore your backup.
+A few files (`metrics.ini`, `Languages/en.ini`, `Scripts/SL_Init.lua`, `Scripts/99 SL-ThemePrefs.lua`, and some gameplay/options Lua) are whole-file replacements of the 5.3.0 originals. Copying them over a different theme version, or over your own edits, will undo those. To uninstall, restore your backup.
 
 ## Files
 
@@ -64,8 +64,9 @@ A few files (`metrics.ini`, `Languages/en.ini`, `Scripts/SL_Init.lua`, and some 
 | `BGAnimations/ScreenPlayerOptions overlay/default.lua` | changed: saves on leaving |
 | `Graphics/ScreenSelectMusic header.lua` | changed: session timer + steps |
 | `Scripts/SL_Init.lua` | changed: session step counter |
-| `metrics.ini`, `Languages/en.ini` | changed: Just Play menu item |
+| `Scripts/99 SL-ThemePrefs.lua` | changed: Heart Rate Feed option |
+| `metrics.ini`, `Languages/en.ini` | changed: Just Play menu item, Heart Rate Feed option |
 
 ## License
 
-GPL-3.0, the same as Simply Love, which these files are modified from. See [LICENSE](LICENSE). Simply Love is by its [original authors and contributors](https://github.com/Simply-Love/Simply-Love-SM5).
+GPL-3.0, the same as Simply Love, which these files are modified from. See [LICENSE](LICENSE). Simply Love is by its [original authors and contributors](https://github.com/Simply-Love/Simply-Love-SM5). This is an unofficial personal mod and isn't affiliated with or supported by the Simply Love project, so please don't send them bug reports about it.
